@@ -40,8 +40,10 @@ JWT_EXPIRE=7d
 
 ### 3. Run in Development
 ```bash
-# From root — runs both frontend and backend
+# For BE
 npm run dev
+# For FE
+npm run start
 ```
 
 - **Backend**: http://localhost:5000
@@ -89,31 +91,6 @@ npm run dev
 | PUT | `/api/users/:id/role` | Change role (admin only) |
 | GET | `/api/teams/members` | Team members across projects |
 
-## 🚂 Deploy on Railway
-
-1. Push code to GitHub
-2. Create new project on [railway.app](https://railway.app)
-3. Add a MongoDB service (or use MongoDB Atlas)
-4. Set environment variables in Railway dashboard:
-   - `MONGO_URI`
-   - `JWT_SECRET`
-   - `NODE_ENV=production`
-5. Deploy — Railway auto-detects the `railway.toml` config
-
-For the **frontend**, deploy separately on Vercel/Netlify:
-- Set `REACT_APP_API_URL=https://your-railway-app.railway.app/api`
-- Build command: `npm run build`
-- Output directory: `build`
-
-## 🔐 Role System
-
-| Action | Admin | Member (Project) | Member |
-|--------|-------|-----------------|--------|
-| Create project | ✅ | ✅ | ✅ |
-| Edit/delete any project | ✅ | ❌ | ❌ |
-| Add project members | ✅ | ✅ | ❌ |
-| Create/edit tasks | ✅ | ✅ | ✅ |
-| Change user roles | ✅ | ❌ | ❌ |
 
 ## 🛠 Tech Stack
 
